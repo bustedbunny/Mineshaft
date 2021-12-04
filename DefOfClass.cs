@@ -13,7 +13,5 @@ namespace Mineshaft
     {
         public static JobDef Mineshaft_WorkInMineshaft;
         public static JobDef Mineshaft_EnterMineshaft;
-
-        public static RoofDef Mineshaft_Roof;
     }
 }
