@@ -221,14 +221,24 @@ namespace Mineshaft
 
         public override void DeSpawn(DestroyMode mode = DestroyMode.Vanish)
         {
-            foreach (IntVec3 cell in this.OccupiedRect())
-            {
-                Map.roofGrid.SetRoof(cell, RoofDefOf.RoofRockThick);
-                RoofCollapserImmediate.DropRoofInCells(cell, Map);
-                Map.roofGrid.SetRoof(cell, null);
-            }
-            base.DeSpawn(mode);
+            Map map = Map;
             MineshaftStaticCache.allSpawnedMineshafts.Remove(this);
+            IEnumerable<IntVec3> cells = GenRadial.RadialCellsAround(Position, GenRadial.RadiusOfNumCells(20), true);
+            base.DeSpawn(mode);
+            if (mode != DestroyMode.Deconstruct)
+            {
+                Log.Message("What?");
+                foreach (IntVec3 cell in cells)
+                {
+                    map.roofGrid.SetRoof(cell, RoofDefOf.RoofRockThick);
+                    map.roofCollapseBuffer.MarkToCollapse(cell);
+                }
+                map.roofCollapseBufferResolver.CollapseRoofsMarkedToCollapse();
+                foreach (IntVec3 cell in cells)
+                {
+                    map.roofGrid.SetRoof(cell, null);
+                }
+            }
         }
         public override void Destroy(DestroyMode mode = DestroyMode.Vanish)
         {
@@ -241,7 +251,7 @@ namespace Mineshaft
             {
                 return false;
             }
-            if (_workers.Count + _shafters.Count  > 7 && !_workers.Contains(pawn))
+            if (_workers.Count + _shafters.Count > 7 && !_workers.Contains(pawn))
             {
                 return false;
             }
