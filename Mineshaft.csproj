@@ -57,7 +57,6 @@
     <Compile Include="MineshaftTextures.cs" />
     <Compile Include="MineshaftTrackers\EnteringPawn.cs" />
     <Compile Include="MineshaftTrackers\LeavingPawn.cs" />
-    <Compile Include="MineshaftTrackers\MineshaftForbiddenTracker.cs" />
     <Compile Include="ThingComps\CompMineshaftInfestations.cs" />
     <Compile Include="ThingComps\CompProperties_Mineshaft.cs" />
     <Compile Include="ThingComps\CompProperties_MineshaftInfestations.cs" />
