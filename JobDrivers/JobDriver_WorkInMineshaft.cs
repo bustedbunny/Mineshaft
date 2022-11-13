@@ -1,9 +1,5 @@
 ﻿using RimWorld;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Verse;
 using Verse.AI;
 
@@ -49,7 +45,10 @@ namespace Mineshaft.JobDrivers
                     ThinkResult thinkResult = actor.thinker.MainThinkNodeRoot.TryIssueJobPackage(actor, default);
                     if (thinkResult.IsValid && thinkResult.Job.def != DefOfClass.Mineshaft_EnterMineshaft)
                     {
+                        #if DEBUG
                         Log.Message("Interrupted job: " + thinkResult.Job.def.defName);
+                        #endif
+                        
                         actor.jobs.EndCurrentJob(JobCondition.InterruptOptional);
                         return;
                     }

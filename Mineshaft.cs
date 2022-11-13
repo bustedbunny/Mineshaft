@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using Verse;
 using Verse.AI;
@@ -132,25 +131,31 @@ namespace Mineshaft
         }
         public void ShafterEntered(Pawn pawn)
         {
-            if (!innerContainer.TryDrop(pawn, DrawPos.ToIntVec3(), Map, ThingPlaceMode.Near, out Pawn lastResultingThing))
+            if (!innerContainer.TryDrop(pawn, DrawPos.ToIntVec3(), Map, ThingPlaceMode.Near, out _))
             {
-                Log.Error($"Couldn't excecute ShafterEntered {pawn.NameFullColored} {pawn.ThingID}");
+                Log.Error($"Couldn't execute {nameof(ShafterEntered)} {pawn.NameFullColored} {pawn.ThingID}");
                 _shaftersToRemove.Add(_shafters.First(x => x.pawn == pawn));
                 return;
             }
             _shaftersToRemove.Add(_shafters.First(x => x.pawn == pawn));
+
+            pawn.jobs.StopAll(false, false);
+            
             Job job = JobMaker.MakeJob(DefOfClass.Mineshaft_WorkInMineshaft, this);
             pawn.jobs.StartJob(job);
         }
         public void ShafterLeft(Pawn pawn)
         {
-            if (!innerContainer.TryDrop(pawn, InteractionCell, Map, ThingPlaceMode.Near, out Pawn lastResultingThing))
+            if (!innerContainer.TryDrop(pawn, InteractionCell, Map, ThingPlaceMode.Near, out _))
             {
-                Log.Error($"Couldn't excecute ShafterLeft {pawn.NameFullColored} {pawn.ThingID}");
+                Log.Error($"Couldn't execute ShafterLeft {pawn.NameFullColored} {pawn.ThingID}");
                 _shaftersToRemove.Add(_shafters.First(x => x.pawn == pawn));
                 return;
             }
             _shaftersToRemove.Add(_shafters.First(x => x.pawn == pawn));
+            
+            pawn.jobs.StopAll(false, false);
+            
             Job job = JobMaker.MakeJob(JobDefOf.Wait);
             job.expiryInterval = 250;
             pawn.jobs.StartJob(job);

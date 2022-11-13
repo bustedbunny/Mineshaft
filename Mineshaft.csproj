@@ -25,7 +25,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>C:\Program Files %28x86%29\Steam\steamapps\common\RimWorld\Mods\Mineshaft\Assemblies\</OutputPath>
+    <OutputPath>Mineshaft\Assemblies</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -68,11 +68,30 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref">
-      <Version>1.3.3159</Version>
+      <Version>1.4.3527</Version>
     </PackageReference>
     <PackageReference Include="Lib.Harmony">
-      <Version>2.1.1</Version>
+      <Version>2.2.2</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Mineshaft\About\About.xml" />
+    <Content Include="Mineshaft\Assemblies\Mineshaft.dll" />
+    <Content Include="Mineshaft\Defs\Incidents.xml" />
+    <Content Include="Mineshaft\Defs\JobDef.xml" />
+    <Content Include="Mineshaft\Defs\ThingDefs_Building_Mineshaft .XML" />
+    <Content Include="Mineshaft\Defs\WorkGivers.xml" />
+    <Content Include="Mineshaft\Languages\English\Keyed\Mineshaft.xml" />
+    <Content Include="Mineshaft\Textures\Things\Mine_north.png" />
+    <Content Include="Mineshaft\Textures\Things\Mine_northm.png" />
+    <Content Include="Mineshaft\Textures\Things\Mine_south.png" />
+    <Content Include="Mineshaft\Textures\Things\Mine_southm.png" />
+    <Content Include="Mineshaft\Textures\Things\Mine_west.png" />
+    <Content Include="Mineshaft\Textures\Things\Mine_westm.png" />
+    <Content Include="Mineshaft\Textures\UI\MineshaftButtons\Force_Exit.png" />
+    <Content Include="Mineshaft\Textures\UI\MineshaftButtons\MinerIcon.png" />
+    <Content Include="Mineshaft\Textures\UI\MineshaftButtons\Resume.png" />
+    <Content Include="Mineshaft\Textures\UI\MineshaftButtons\Stop.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
