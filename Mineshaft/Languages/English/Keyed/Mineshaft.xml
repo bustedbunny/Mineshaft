@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <Mineshaft_EjectPawnGizmoLabel>Force exit</Mineshaft_EjectPawnGizmoLabel>
+    <Mineshaft_ExhaustedNoFallback>Mineshaft resources exhausted.</Mineshaft_ExhaustedNoFallback>
+    <Mineshaft_Exhausted>Mineshaft resources exhausted, shaft automatically forbidden. Unforbid to begin mining of {0}.</Mineshaft_Exhausted>
+
+    <Mineshaft_LetterInjuredFromMining>{PAWN_labelShort} got injured while mining, {1} will try to leave mineshaft as soon as he can.</Mineshaft_LetterInjuredFromMining>
+    <Mineshaft_LetterInjuredFromMiningLabel>{PAWN_labelShort}: injured in mineshaft</Mineshaft_LetterInjuredFromMiningLabel>
+
+    <Mineshaft_LetterDiedInMineshaft>{PAWN_labelShort} has died while mining. {1} corpse got left in mineshaft in unknown location and can't be found.</Mineshaft_LetterDiedInMineshaft>
+    <Mineshaft_LetterDiedInMineshaftLabel>{PAWN_labelShort}: died in mineshaft</Mineshaft_LetterDiedInMineshaftLabel>
+
+
+    <Mineshaft_PawnsInside>Pawns moving inside of mineshaft:</Mineshaft_PawnsInside>
+    <Mineshaft_PawnInside>{0} is {1} in {2}</Mineshaft_PawnInside>
+    <Mineshaft_Leaving>leaving</Mineshaft_Leaving>
+    <Mineshaft_Entering>entering</Mineshaft_Entering>
+
+
+    <Mineshaft_FloatMenuOptionLabel>Work in mineshaft</Mineshaft_FloatMenuOptionLabel>
+
+</LanguageData>

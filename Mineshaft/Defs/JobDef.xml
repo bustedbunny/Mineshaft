@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <JobDef>
+        <defName>Mineshaft_WorkInMineshaft</defName>
+        <driverClass>Mineshaft.JobDrivers.JobDriver_WorkInMineshaft</driverClass>
+        <reportString>works in mineshaft.</reportString>
+        <casualInterruptible>false</casualInterruptible>
+    </JobDef>
+    
+    <JobDef>
+        <defName>Mineshaft_EnterMineshaft</defName>
+        <driverClass>Mineshaft.JobDrivers.JobDriver_EnterMineshaft</driverClass>
+        <reportString>entering mineshaft.</reportString>
+    </JobDef>
+
+</Defs>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <IncidentDef>
+        <defName>Mineshaft_Infestation</defName>
+        <label>mineshaft infestation</label>
+        <targetTags>
+          <li>Map_PlayerHome</li>
+          <li>Map_TempIncident</li>
+          <li>Map_Misc</li>
+          <li>Map_RaidBeacon</li>
+        </targetTags>
+        <workerClass>Mineshaft.IncidentWorker_MineshaftInfestation</workerClass>
+        <letterLabel>Too deep: Infestation</letterLabel>
+        <letterText>Miners in your shaft have stumbled upon some underground insects. Now they're tunneling upwards to seek revenge!\n\nBeware - the insects have been angered and will try to destroy your base.\n\All your miners will leave mineshaft now.</letterText>
+        <letterDef>ThreatBig</letterDef>
+        <baseChance>1</baseChance>
+        <category>DeepDrillInfestation</category>
+        <pointsScaleable>true</pointsScaleable>
+        <tale>Infestation</tale>
+      </IncidentDef>
+
+</Defs>
